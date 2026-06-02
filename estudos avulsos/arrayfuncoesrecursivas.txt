@@ -1,0 +1,109 @@
+
+
+// FUNCAO PRA PREENCHER ARRAY
+
+void preencher(int a[],int i, int n)
+{
+    if (i >= n)
+    {
+        return;
+    }
+    else
+    {
+        scanf("%d",&a[i]);
+
+        preencher(a,++i,n);
+    }
+}
+
+//  FUNCAO PRA PRINTAR ARRAY
+
+void printarr(int y[],int i,int n)
+{
+    if (i >= n)
+    {
+        return;
+    }
+     else
+    {
+        if (i == n - 1)
+            printf("%d\n", y[i]);
+        else
+            printf("%d ", y[i]);
+
+        return printarr(y,++i,n);
+    }
+}
+
+// FUNCAO PRA COMPARAR ELEMENTOS DE ARRAYS DISTINTOS
+
+int compararecontararrays(char a[], char b[], int i, int n, int contador)
+{
+    if (i >= n)
+    {
+        return contador;
+    }   
+    if (a[i] == b[i])
+    {
+        return lercomparaconta(a, b, i+1, n, contador+1);
+    }
+    else
+    {
+        return lercomparaconta(a, b, i+1, n, contador);
+    }
+}
+
+//  FUNCAO PRA INVERTER UM ARRAY
+
+void inverterarray(int a[],int i,int j,int n)
+{
+    int aux;
+    if (i >= j)
+    {
+        printarr(a,0,n);
+        return;
+
+    }
+    else
+    {
+        aux = a[i];
+        a[i] = a[j];
+        a[j] = aux;
+
+        inverterarray(a,++i,--j,n);
+    }
+}
+
+// BUUBLE SORT RECURSIVO
+
+void maiorpraponta(int array[],int i, int tamanho)
+{
+    if (i >= tamanho-1)
+    {
+        return;
+    }
+    else
+    {
+        if (array[i] > array[i+1])
+        {
+        int aux = array[i];
+        array[i] = array[i + 1];
+        array[i + 1] = aux;
+        }
+        maiorpraponta(array, ++i,tamanho);
+    }
+}
+
+void bubblesortrecursivo(int array[], int tamanho)
+{
+    if (tamanho <=1 )
+    {
+        return;
+    }
+    else
+    {
+        maiorpraponta(array,0,tamanho);
+        bubblesortrecursivo(array,--tamanho);
+    }
+}
+
