@@ -16,7 +16,7 @@ int main()
     {
         brinquedos ++;
     }
-    if (altura >= 170 && idade >= 16)
+    if (altura >= 170 || idade >= 16)
     {
         brinquedos ++;
     }
