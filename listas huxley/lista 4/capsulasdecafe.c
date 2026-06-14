@@ -1,5 +1,6 @@
 #include<stdio.h>
 
+
 void capsulasdecafe(int quantidade, char tipo,int capsulas, int contador)
 {
     int type;
